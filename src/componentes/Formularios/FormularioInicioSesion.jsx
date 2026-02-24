@@ -1,7 +1,20 @@
 
+import { useState } from "react"
 import { NavBar } from "../NavBar/NavBar"
+import { login } from "../../servicios/usuarios.service"
 
 export function FormularioInicioSesion() {
+
+    const [usuario, setUsuario] = useState({
+
+        correo: "",
+        passwrd: ""
+    })
+
+    const doInicioSesion = async () => {
+        const data = await login(usuario);
+        console.log(data);
+    }
 
     return (
 
@@ -15,11 +28,28 @@ export function FormularioInicioSesion() {
                         <div className="card-body">
                             <fieldset className="fieldset">
 
-                                <input type="email" className="input" placeholder="Email" />
+                                <input type="email" className="input" placeholder="Email"
 
-                                <input type="password" className="input" placeholder="Contraseña" />
+                                    value={usuario.correo}
+                                    onChange={e => {
+                                        setUsuario({
+                                            ...usuario,
+                                            correo: e.target.value
+                                        })
+                                    }}
+                                />
 
-                                <button className="btn btn-neutral mt-4">Iniciar sesion</button>
+                                <input type="password" className="input" placeholder="Contraseña"
+
+                                    value={usuario.passwrd}
+                                    onChange={e => {
+                                        setUsuario({
+                                            ...usuario,
+                                            passwrd: e.target.value
+                                        })
+                                    }}
+                                />
+                                <button className="btn btn-neutral mt-4" onClick={doInicioSesion}>Iniciar sesion</button>
                             </fieldset>
                         </div>
                     </div>
