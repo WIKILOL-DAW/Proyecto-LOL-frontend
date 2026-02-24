@@ -58,7 +58,6 @@ export function FormularioRegistro() {
                                         })
                                     }}
                                 />
-
                                 <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>
                             </fieldset>
                         </div>
