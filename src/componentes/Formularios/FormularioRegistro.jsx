@@ -1,7 +1,20 @@
-import { Boton } from "../Boton/Boton";
+import { useState } from "react";
 import { NavBar } from "../NavBar/NavBar";
+import { registro } from "../../servicios/usuarios.service";
 
 export function FormularioRegistro() {
+
+    const [usuario, setUsuario] = useState({
+        alias: "",
+        correo: "",
+        passwrd: ""
+    })
+
+    const doRegistro = async () => {
+        const data = await registro(usuario)
+        console.log(data);
+
+    }
 
     return (
 
@@ -15,13 +28,38 @@ export function FormularioRegistro() {
                         <div className="card-body">
                             <fieldset className="fieldset">
 
-                                <input type="email" className="input" placeholder="Nombre de usuario" />
+                                <input type="text" className="input" placeholder="Nombre de usuario"
+                                    value={usuario.alias}
+                                    onChange={e => {
+                                        setUsuario({
+                                            ...usuario,
+                                            alias: e.target.value
+                                        })
+                                    }} />
 
-                                <input type="email" className="input" placeholder="Email" />
-                                
-                                <input type="password" className="input" placeholder="Contraseña" />
+                                <input type="email" className="input" placeholder="Email"
+                                    value={usuario.correo}
+                                    onChange={e => {
 
-                                <button className="btn btn-neutral mt-4">Registrarse</button>
+                                        setUsuario({
+                                            ...usuario,
+                                            correo: e.target.value
+                                        })
+                                    }}
+                                />
+
+                                <input type="password" className="input" placeholder="Contraseña"
+                                    value={usuario.passwrd}
+                                    onChange={e => {
+
+                                        setUsuario({
+                                            ...usuario,
+                                            passwrd: e.target.value
+                                        })
+                                    }}
+                                />
+
+                                <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>
                             </fieldset>
                         </div>
                     </div>

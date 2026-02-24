@@ -1,4 +1,4 @@
-const URL_BACKEND = '';
+const URL_BACKEND = '192.168.11.239';
 
 export function get(ruta, callback, callbackError) {
 
