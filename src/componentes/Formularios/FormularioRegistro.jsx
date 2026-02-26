@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { NavBar } from "../NavBar/NavBar";
 import { registro } from "../../servicios/Administrador.service.js";
+import { useNavigate } from "react-router";
 
 export function FormularioRegistro() {
 
+    const navigate = useNavigate();
     const [administrador, setAdmin] = useState({
         alias: "",
         correo: "",
@@ -24,7 +26,7 @@ export function FormularioRegistro() {
             if (token !== null) {
 
                 sessionStorage.setItem("token", JSON.stringify(token));
-                window.location.href = "/"
+                navigate("/");
             }
         }
 
