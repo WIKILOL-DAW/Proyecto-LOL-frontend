@@ -19,7 +19,6 @@ export function FormularioRegistro() {
             setErrorres("No puede haber campos vacios");
         } else {
             const { message, token } = await registro(administrador);
-            console.log(message);
             setErrorres(message);
 
             if (token !== null) {
