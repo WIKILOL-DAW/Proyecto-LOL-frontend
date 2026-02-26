@@ -1,19 +1,36 @@
 
 import { useState } from "react"
 import { NavBar } from "../NavBar/NavBar"
-import { login } from "../../servicios/usuarios.service"
+import { login } from "../../servicios/Administrador.service"
+import Link from "daisyui/components/link";
 
 export function FormularioInicioSesion() {
 
-    const [usuario, setUsuario] = useState({
+    const [administrador, setUsuario] = useState({
 
         correo: "",
         passwrd: ""
     })
 
+    const [errores, setErrorres] = useState();
+
     const doInicioSesion = async () => {
-        const data = await login(usuario);
-        console.log(data);
+
+
+        if (!administrador.correo || !administrador.passwrd) {
+            console.log("Correo o contraseña vacios");
+            setErrorres("Correo o contraseña vacios");
+        } else {
+            const { message, token } = await login(administrador);
+            console.log(message);
+            setErrorres(message);
+
+            if (token !== null) {
+
+                sessionStorage.setItem("token", JSON.stringify(token));
+                window.location.href = "/"
+            }
+        }
     }
 
     return (
@@ -30,10 +47,10 @@ export function FormularioInicioSesion() {
 
                                 <input type="email" className="input" placeholder="Email"
 
-                                    value={usuario.correo}
+                                    value={administrador.correo}
                                     onChange={e => {
                                         setUsuario({
-                                            ...usuario,
+                                            ...administrador,
                                             correo: e.target.value
                                         })
                                     }}
@@ -41,20 +58,22 @@ export function FormularioInicioSesion() {
 
                                 <input type="password" className="input" placeholder="Contraseña"
 
-                                    value={usuario.passwrd}
+                                    value={administrador.passwrd}
                                     onChange={e => {
                                         setUsuario({
-                                            ...usuario,
+                                            ...administrador,
                                             passwrd: e.target.value
                                         })
                                     }}
                                 />
                                 <button className="btn btn-neutral mt-4" onClick={doInicioSesion}>Iniciar sesion</button>
+                                <span>{errores}</span>
                             </fieldset>
                         </div>
                     </div>
                 </div>
             </div>
+
         </>
     )
 }
