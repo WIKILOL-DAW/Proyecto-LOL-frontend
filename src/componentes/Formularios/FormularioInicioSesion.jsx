@@ -2,11 +2,12 @@
 import { useState } from "react"
 import { NavBar } from "../NavBar/NavBar"
 import { login } from "../../servicios/Administrador.service"
-import Link from "daisyui/components/link";
+import { useNavigate } from "react-router";
 
 
 export function FormularioInicioSesion() {
-
+    
+    const navigate = useNavigate();
     const [administrador, setUsuario] = useState({
 
         correo: "",
@@ -16,6 +17,7 @@ export function FormularioInicioSesion() {
     const [errores, setErrorres] = useState();
 
     const doInicioSesion = async () => {
+
 
 
         if (!administrador.correo || !administrador.passwrd) {
@@ -29,7 +31,7 @@ export function FormularioInicioSesion() {
             if (token !== null) {
 
                 sessionStorage.setItem("token", JSON.stringify(token));
-                window.location.href = "/"
+                navigate("/");
             }
         }
     }
