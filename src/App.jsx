@@ -6,8 +6,10 @@ import Inicio from "./componentes/Inicio/Inicio"
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <NavbarSelector />
+
 
       <Routes>
         <Route path="/" element={<Inicio />} />
@@ -15,6 +17,10 @@ function App() {
         <Route path="/registro" element={<FormularioRegistro />} />
       </Routes>
     </BrowserRouter>
+
+      <h1>Inicio</h1>
+    </>
+
   )
 }
 

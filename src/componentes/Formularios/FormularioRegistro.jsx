@@ -1,5 +1,36 @@
 
+import { useState } from "react";
+import { NavBar } from "../NavBar/NavBar";
+import { registro } from "../../servicios/Administrador.service.js";
+
+
 export function FormularioRegistro() {
+
+    const [administrador, setAdmin] = useState({
+        alias: "",
+        correo: "",
+        passwrd: ""
+    });
+
+    const [errores, setErrorres] = useState();
+
+    const doRegistro = async () => {
+
+        if (!administrador.alias || !administrador.correo || !administrador.passwrd) {
+            console.log("Admin jodido");
+            setErrorres("No puede haber campos vacios");
+        } else {
+            const { message, token } = await registro(administrador);
+            setErrorres(message);
+
+            if (token !== null) {
+
+                sessionStorage.setItem("token", JSON.stringify(token));
+                window.location.href = "/"
+            }
+        }
+
+    }
 
     return (
         <>
@@ -11,13 +42,43 @@ export function FormularioRegistro() {
                         <div className="card-body">
                             <fieldset className="fieldset">
 
-                                <input type="email" className="input" placeholder="Nombre de usuario" />
+                                <input type="text" className="input" placeholder="Nombre de usuario"
+                                    value={administrador.alias}
+                                    onChange={e => {
+                                        setAdmin({
+                                            ...administrador,
+                                            alias: e.target.value
+                                        })
+                                    }} />
 
                                 <input type="email" className="input" placeholder="Email" />
 
                                 <input type="password" className="input" placeholder="Contraseña" />
 
-                                <button className="btn btn-neutral mt-4">Registrarse</button>
+                                <input type="email" className="input" placeholder="Email"
+                                    value={administrador.correo}
+                                    onChange={e => {
+
+
+                                        setAdmin({
+                                            ...administrador,
+                                            correo: e.target.value
+                                        })
+                                    }}
+                                />
+
+                                <input type="password" className="input" placeholder="Contraseña"
+                                    value={administrador.passwrd}
+                                    onChange={e => {
+
+                                        setAdmin({
+                                            ...administrador,
+                                            passwrd: e.target.value
+                                        })
+                                    }}
+                                />
+                                <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>
+                                <span>{errores}</span>
                             </fieldset>
                         </div>
                     </div>
