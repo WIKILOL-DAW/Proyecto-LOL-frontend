@@ -31,7 +31,6 @@ export function FormularioRegistro() {
                 navigate("/");
             }
         }
-
     }
 
     return (

@@ -1,4 +1,5 @@
-const URL_BACKEND = '192.168.11.239';
+//const URL_BACKEND = '192.168.11.239';
+const URL_BACKEND = 'http://localhost:8080'
 
 export function get(ruta, callback, callbackError) {
 
@@ -15,29 +16,31 @@ export function get(ruta, callback, callbackError) {
         .catch(error => callbackError(error));
 }
 
-export function post(ruta, datos, callback, callbackError) {
-
+export async function post(ruta, datos) {
     const cabecera = new Headers();
     cabecera.append("Content-Type", "application/json");
 
     const enviarDatos = {
         method: "POST",
-        header: cabecera,
+        headers: cabecera,
         body: JSON.stringify(datos)
+    };
+
+    try {
+        const response = await fetch(URL_BACKEND + ruta, enviarDatos);
+
+        if (!response.ok) {
+            console.log("FALLO PETICION POST:", response.status);
+            throw new Error(response.status);
+        }
+
+        const data = await response.json();
+        return data;
+
+    } catch (error) {
+        console.error("Error en POST:", error);
+        throw error; 
     }
-
-
-    fetch(URL_BACKEND + ruta, enviarDatos)
-        .then(response => {
-            if (!response.ok) {
-                console.log("FALLO PETICION POST: ", response.status);
-                throw new Error(response.status);
-            } else {
-                return response.json();
-            }
-        })
-        .then(data => callback(data))
-        .catch(error => callbackError(error))
 }
 
 export function peticionDelete(ruta, callback, callbackError) {
