@@ -3,6 +3,7 @@ import { NavbarSelector } from "./componentes/NavBar/NavBarSelector";
 import { FormularioInicioSesion } from "./componentes/Formularios/FormularioInicioSesion";
 import { FormularioRegistro } from "./componentes/Formularios/FormularioRegistro";
 import Inicio from "./componentes/Inicio/Inicio";
+import './index.css'
 
 function App() {
   return (
