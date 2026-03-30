@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import { NavBar } from "../NavBar/NavBar";
 import { registro } from "../../servicios/Administrador.service.js";
 import { useNavigate } from "react-router";
+
 
 export function FormularioRegistro() {
 
@@ -33,9 +35,7 @@ export function FormularioRegistro() {
     }
 
     return (
-
         <>
-            <NavBar />
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -53,9 +53,14 @@ export function FormularioRegistro() {
                                         })
                                     }} />
 
+                                <input type="email" className="input" placeholder="Email" />
+
+                                <input type="password" className="input" placeholder="Contraseña" />
+
                                 <input type="email" className="input" placeholder="Email"
                                     value={administrador.correo}
                                     onChange={e => {
+
 
                                         setAdmin({
                                             ...administrador,

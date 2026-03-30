@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom"
 import { BotonToggle } from "../Toggle/BotonToggle"
 
-export function NavBar() {
+export function NavBarAdministradores() {
+
+    const links = (
+        <>
+            <li><Link to="/login">Iniciar sesión</Link></li>
+            <li><Link to="/registro">Registro</Link></li>
+        </>
+    )
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
 
@@ -16,38 +25,16 @@ export function NavBar() {
 
                     <ul tabIndex={-1}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Clasificacion</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        {links}
                     </ul>
                 </div>
 
-                <a className="btn btn-ghost text-xl">WIKI-LOL</a>
+                <Link to="/" className="btn btn-ghost text-xl">WIKI-LOL</Link>
             </div>
 
-            {/* CENTRO */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Clasificacion</a></li>
-                    <li>
-                        <details>
-                            <summary>Regiones</summary>
-                            <ul className="p-2 bg-base-100 w-40 z-1">
-                                <li><a>Europa</a></li>
-                                <li><a>Corea</a></li>
-                                <li><a>China</a></li>
-                                <li><a>America</a></li>
-                                <li><a>Oceania</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Equipos</a></li>
+                    {links}
                 </ul>
             </div>
 

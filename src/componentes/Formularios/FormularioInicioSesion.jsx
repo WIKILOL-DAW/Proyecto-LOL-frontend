@@ -4,6 +4,7 @@ import { NavBar } from "../NavBar/NavBar"
 import { login } from "../../servicios/Administrador.service"
 import { useNavigate } from "react-router";
 
+
 export function FormularioInicioSesion() {
     
     const navigate = useNavigate();
@@ -36,9 +37,7 @@ export function FormularioInicioSesion() {
     }
 
     return (
-
         <>
-            <NavBar />
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

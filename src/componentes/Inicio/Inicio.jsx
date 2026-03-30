@@ -1,13 +1,5 @@
-import { NavBar } from "../NavBar/NavBar";
 
-export default function Inicio() {
 
-    return (
+export default function Inicio(){
 
-        <>
-
-            <NavBar/>
-        </>
-
-    )
 }
