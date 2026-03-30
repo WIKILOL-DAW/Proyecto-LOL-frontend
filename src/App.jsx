@@ -1,8 +1,16 @@
+
+
+import './App.css'
+import { FormularioInicioSesion } from './componentes/Formularios/FormularioInicioSesion'
+import { FormularioRegistro } from './componentes/Formularios/FormularioRegistro'
+import Inicio from './componentes/Inicio/Inicio'
+
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { NavbarSelector } from "./componentes/NavBar/NavBarSelector"
 import { FormularioInicioSesion } from "./componentes/Formularios/FormularioInicioSesion"
 import { FormularioRegistro } from "./componentes/Formularios/FormularioRegistro"
 import Inicio from "./componentes/Inicio/Inicio"
+
 
 function App() {
   return (
@@ -18,7 +26,7 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-      <h1>Inicio</h1>
+      <Inicio />
     </>
 
   )
