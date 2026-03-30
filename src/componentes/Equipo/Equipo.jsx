@@ -1,4 +1,4 @@
-export default function equipo(){
+export default function Equipo(){
 
     const[equipo,setEquipo]={
         nombre:"",

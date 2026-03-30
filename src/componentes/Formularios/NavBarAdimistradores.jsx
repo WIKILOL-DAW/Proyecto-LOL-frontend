@@ -3,10 +3,13 @@ import { BotonToggle } from "../Toggle/BotonToggle"
 
 export function NavBarAdministradores() {
 
+
+
     const links = (
         <>
             <li><Link to="/login">Iniciar sesión</Link></li>
             <li><Link to="/registro">Registro</Link></li>
+            <li><Link to="/insertarEquipo">Insertar equipo</Link></li>
         </>
     )
 

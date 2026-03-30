@@ -1,6 +1,7 @@
 import { BotonToggle } from "../Toggle/BotonToggle"
 
 export function NavBar() {
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
 
@@ -39,15 +40,15 @@ export function NavBar() {
                         <details>
                             <summary>Regiones</summary>
                             <ul className="p-2 bg-base-100 w-40 z-1">
-                                <li><a>Europa</a></li>
-                                <li><a>Corea</a></li>
-                                <li><a>China</a></li>
-                                <li><a>America</a></li>
-                                <li><a>Oceania</a></li>
+                                <li>Europa</li>
+                                <li>Corea</li>
+                                <li>China</li>
+                                <li>America</li>
+                             
                             </ul>
                         </details>
                     </li>
-                    <li><a>Equipos</a></li>
+                    <li>Equipos</li>
                 </ul>
             </div>
 
