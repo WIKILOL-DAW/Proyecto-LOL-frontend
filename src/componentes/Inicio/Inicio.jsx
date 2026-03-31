@@ -1,5 +1,5 @@
 
 
-export default function Inicio(){
+export default function Inicio() {
 
 }

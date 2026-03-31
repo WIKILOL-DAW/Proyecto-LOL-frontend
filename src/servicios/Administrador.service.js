@@ -1,5 +1,5 @@
-//const API = "http://localhost:8080"
-const API = 'http://192.168.11.239:8080';
+const API = "http://localhost:8080"
+//const API = 'http://192.168.11.239:8080';
 
 const registro = async (administrador) => {
     try {

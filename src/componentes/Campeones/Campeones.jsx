@@ -10,8 +10,6 @@ export function Campeones() {
 
     return (
         <>
-            <NavBar />
-
             <h1>Conocelos</h1>
             <div className="flex gap-4">
                 {campeones.map((campeon) => (

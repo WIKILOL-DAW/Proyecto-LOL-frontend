@@ -6,6 +6,7 @@ import Inicio from "./componentes/Inicio/Inicio";
 import './index.css'
 import Equipo from "./componentes/Equipo/Equipo";
 import { InsertarEquipo } from "./componentes/Equipo/InsertarEquipo";
+import { InsertarCampeon } from "./componentes/Campeones/InsertarCampeon";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/login" element={<FormularioInicioSesion />} />
         <Route path="/registro" element={<FormularioRegistro />} />
-        <Route path="/insertarEquipo" element={<InsertarEquipo/>}/>
+        <Route path="/insertarEquipo" element={<InsertarEquipo />} />
+        <Route path="/insertarCampeon" element={<InsertarCampeon />} />
       </Routes>
     </>
   );

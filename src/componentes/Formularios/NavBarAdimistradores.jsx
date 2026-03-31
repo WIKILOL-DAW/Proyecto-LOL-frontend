@@ -10,6 +10,7 @@ export function NavBarAdministradores() {
             <li><Link to="/login">Iniciar sesión</Link></li>
             <li><Link to="/registro">Registro</Link></li>
             <li><Link to="/insertarEquipo">Insertar equipo</Link></li>
+            <li><Link to={"/insertarCampeon"}>Insertar campeon</Link></li>
         </>
     )
 

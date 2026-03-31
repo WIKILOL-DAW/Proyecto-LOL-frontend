@@ -35,7 +35,7 @@ export function NavBar() {
             {/* CENTRO */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Clasificacion</a></li>
+                    <li>Clasificacion</li>
                     <li>
                         <details>
                             <summary>Regiones</summary>
