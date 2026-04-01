@@ -6,7 +6,7 @@ export function NavbarSelector() {
     
   const location = useLocation()
 
-  const rutasAdministradores = ["/login", "/registro", "/insertarEquipo"]
+  const rutasAdministradores = ["/login", "/registro", "/insertarEquipo" , "/insertarJugador"]
   const rutaAdministrador = rutasAdministradores.includes(location.pathname)
 
   return (

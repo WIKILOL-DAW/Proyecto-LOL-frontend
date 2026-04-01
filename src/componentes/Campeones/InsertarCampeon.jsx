@@ -1,7 +1,10 @@
 import { post } from "../../servicios/Administrador.peticiones.service";
 import { useState } from "react";
+import { ComprobarToken } from "../../servicios/ComprobarToken";
 
 export function InsertarCampeon() {
+
+    ComprobarToken();
 
     const [campeon, setCampeon] = useState({
         nombre: "",

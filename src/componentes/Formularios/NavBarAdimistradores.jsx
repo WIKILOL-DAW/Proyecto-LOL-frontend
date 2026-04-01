@@ -1,18 +1,27 @@
 import { Link } from "react-router-dom"
 import { BotonToggle } from "../Toggle/BotonToggle"
+import { useState } from "react"
 
 export function NavBarAdministradores() {
 
+    const [token] = useState(JSON.parse(sessionStorage.getItem("token")));
+    let links;
 
-
-    const links = (
-        <>
-            <li><Link to="/login">Iniciar sesión</Link></li>
-            <li><Link to="/registro">Registro</Link></li>
-            <li><Link to="/insertarEquipo">Insertar equipo</Link></li>
-            <li><Link to={"/insertarCampeon"}>Insertar campeon</Link></li>
-        </>
-    )
+    if (token) {
+        links = (
+            <>
+                <li><Link to="/insertarEquipo">Insertar equipo</Link></li>
+                <li><Link to={"/insertarCampeon"}>Insertar campeon</Link></li>
+            </>
+        )
+    } else {
+        links = (
+            <>
+                <li><Link to="/login">Iniciar sesión</Link></li>
+                <li><Link to="/registro">Registro</Link></li>
+            </>
+        )
+    }
 
     return (
         <div className="navbar bg-base-100 shadow-sm">

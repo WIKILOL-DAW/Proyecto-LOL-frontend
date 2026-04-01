@@ -7,6 +7,7 @@ import './index.css'
 import Equipo from "./componentes/Equipo/Equipo";
 import { InsertarEquipo } from "./componentes/Equipo/InsertarEquipo";
 import { InsertarCampeon } from "./componentes/Campeones/InsertarCampeon";
+import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/registro" element={<FormularioRegistro />} />
         <Route path="/insertarEquipo" element={<InsertarEquipo />} />
         <Route path="/insertarCampeon" element={<InsertarCampeon />} />
+        <Route  path= "/insertarJugador" element={<InsertarJugador/>}/>
       </Routes>
     </>
   );
