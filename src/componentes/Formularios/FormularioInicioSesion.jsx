@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 
 export function FormularioInicioSesion() {
-    
+
     const navigate = useNavigate();
     const [administrador, setUsuario] = useState({
 
@@ -14,7 +14,7 @@ export function FormularioInicioSesion() {
         passwrd: ""
     })
 
-    const [errores, setErrorres] = useState();
+    const [errores, setErrorres] = useState("");
 
     const doInicioSesion = async () => {
 
@@ -53,7 +53,8 @@ export function FormularioInicioSesion() {
                                         setUsuario({
                                             ...administrador,
                                             correo: e.target.value
-                                        })
+                                        });
+                                        setErrorres("");
                                     }}
                                 />
 
@@ -64,7 +65,8 @@ export function FormularioInicioSesion() {
                                         setUsuario({
                                             ...administrador,
                                             passwrd: e.target.value
-                                        })
+                                        });
+                                        setErrorres("");
                                     }}
                                 />
                                 <button className="btn btn-neutral mt-4" onClick={doInicioSesion}>Iniciar sesion</button>

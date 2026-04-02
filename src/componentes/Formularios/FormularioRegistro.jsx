@@ -14,7 +14,7 @@ export function FormularioRegistro() {
         passwrd: ""
     });
 
-    const [errores, setErrorres] = useState();
+    const [errores, setErrorres] = useState("");
 
     const doRegistro = async () => {
 
@@ -49,7 +49,8 @@ export function FormularioRegistro() {
                                         setAdmin({
                                             ...administrador,
                                             alias: e.target.value
-                                        })
+                                        });
+                                         setErrorres("");
                                     }} />
 
                                 <input type="email" className="input" placeholder="Email"
@@ -60,7 +61,8 @@ export function FormularioRegistro() {
                                         setAdmin({
                                             ...administrador,
                                             correo: e.target.value
-                                        })
+                                        });
+                                         setErrorres("");
                                     }}
                                 />
 
@@ -71,7 +73,8 @@ export function FormularioRegistro() {
                                         setAdmin({
                                             ...administrador,
                                             passwrd: e.target.value
-                                        })
+                                        });
+                                         setErrorres("");
                                     }}
                                 />
                                 <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>

@@ -10,8 +10,9 @@ export function NavBarAdministradores() {
     if (token) {
         links = (
             <>
-                <li><Link to="/insertarEquipo">Insertar equipo</Link></li>
-                <li><Link to={"/insertarCampeon"}>Insertar campeon</Link></li>
+                <li><Link to="/insertarEquipo">Nuevo equipo</Link></li>
+                <li><Link to="/insertarCampeon">Nuevo campeon</Link></li>
+                <li><Link to="/insertarJugador">Nuevo jugador</Link></li>
             </>
         )
     } else {
@@ -55,5 +56,6 @@ export function NavBarAdministradores() {
                 <BotonToggle />
             </div>
         </div>
+        
     )
 }

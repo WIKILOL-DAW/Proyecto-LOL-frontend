@@ -11,7 +11,7 @@ export function InsertarEquipo() {
         nombreLiga: ""
     });
 
-    const [errores, setErrorres] = useState();
+    const [errores, setErrorres] = useState("");
 
     const crearEquipo = async () => {
 
@@ -35,6 +35,7 @@ export function InsertarEquipo() {
                             ...equipo,
                             nombre: e.target.value
                         });
+                        setErrorres("");
                     }} />
                 <select
                     className="select select-neutral"
@@ -44,6 +45,7 @@ export function InsertarEquipo() {
                             ...equipo,
                             nombreLiga: e.target.value
                         });
+                        setErrorres("");
                     }}
                 >
                     <option value="" disabled>Seleccionar liga</option>

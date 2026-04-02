@@ -11,7 +11,7 @@ export function InsertarCampeon() {
         posicion: ""
     });
 
-    const [errores, setErrorres] = useState();
+    const [errores, setErrorres] = useState("");
 
     const crearCampeon = async () => {
 
@@ -36,6 +36,7 @@ export function InsertarCampeon() {
                                 ...campeon,
                                 nombre: e.target.value
                             });
+                            setErrorres("");
                         }} />
                     <select
                         className="select select-neutral"
@@ -45,6 +46,7 @@ export function InsertarCampeon() {
                                 ...campeon,
                                 posicion: e.target.value
                             });
+                            setErrorres("");
                         }}
                     >
                         <option value="" disabled>Seleccionar posicion</option>
