@@ -20,7 +20,7 @@ export function InsertarJugador() {
         if (!jugador.alias || !jugador.nacionalidad || !jugador.posicion || !jugador.nombreEquipo) {
             setErrorres("No puede haber campos vacion en jugador");
         } else {
-            const data = await post("/api/campeon/insertarJugador", jugador);
+            const data = await post("/api/jugador/insertarJugador", jugador);
             console.log("Jugador creado:", data);
             setErrorres("Jugador creado con exito");
         }
