@@ -1,13 +1,9 @@
 
 import { useState } from "react"
-import { NavBar } from "../NavBar/NavBar"
 import { login } from "../../servicios/Administrador.service"
-import { useNavigate } from "react-router";
-
 
 export function FormularioInicioSesion() {
 
-    const navigate = useNavigate();
     const [administrador, setUsuario] = useState({
 
         correo: "",
@@ -15,10 +11,7 @@ export function FormularioInicioSesion() {
     })
 
     const [errores, setErrorres] = useState("");
-
     const doInicioSesion = async () => {
-
-
 
         if (!administrador.correo || !administrador.passwrd) {
             console.log("Correo o contraseña vacios");
@@ -31,7 +24,6 @@ export function FormularioInicioSesion() {
             if (token !== null) {
 
                 sessionStorage.setItem("token", JSON.stringify(token));
-                navigate("/");
             }
         }
     }
@@ -44,7 +36,11 @@ export function FormularioInicioSesion() {
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
-                            <fieldset className="fieldset">
+                            <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-[#1C1C1C]/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
+                            
+                                <legend className="text-3xl font-bold text-#1C1C1C] text-center mb-2">
+                                    Inicio sesion
+                                </legend>
 
                                 <input type="email" className="input" placeholder="Email"
 

@@ -29,13 +29,13 @@ export function InsertarJugador() {
     return (
         <>
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-base-300 to-base-200 p-6">
-                <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-primary/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
+                <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-[#1C1C1C]/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
 
-                    <legend className="text-3xl font-bold text-primary text-center mb-2">
-                        Insertar nuevo Jugador
+                    <legend className="text-3xl font-bold text-#1C1C1C] text-center mb-2">
+                        Añadir jugador
                     </legend>
 
-                    <input type="text" className="input input-bordered input-primary w-full" placeholder="Nombre del jugador"
+                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Nombre del jugador"
                         value={jugador.alias}
                         onChange={e => {
                             setJugador({
@@ -44,7 +44,7 @@ export function InsertarJugador() {
                             });
                             setErrorres("");
                         }} />
-                    <input type="text" className="input input-bordered input-primary w-full" placeholder="Nacionalidad del jugador"
+                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Nacionalidad del jugador"
                         value={jugador.nacionalidad}
                         onChange={e => {
                             setJugador({
@@ -53,7 +53,7 @@ export function InsertarJugador() {
                             });
                             setErrorres("");
                         }} />
-                    <input type="text" className="input input-bordered input-primary w-full" placeholder="Nombre del equipo"
+                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Nombre del equipo"
                         value={jugador.nombreEquipo}
                         onChange={e => {
                             setJugador({
@@ -63,7 +63,7 @@ export function InsertarJugador() {
                             setErrorres("");
                         }} />
                     <select
-                        className="input input-bordered input-primary w-full"
+                        className="input input-bordered border-[#111111] focus:border-[#111111] w-full"
                         value={jugador.posicion}
                         onChange={e => {
                             setJugador({
@@ -80,7 +80,7 @@ export function InsertarJugador() {
                         <option value="ADC">ADC</option>
                         <option value="SUP">SUPP</option>
                     </select>
-                    <button className="btn btn-primary w-full mt-2" onClick={crearJugador}>Añadir equipo</button>
+                    <button className="btn w-full mt-2 bg-[#111111] border-[#111111] text-white hover:bg-[#2a2a2a]" onClick={crearJugador}>Añadir equipo</button>
                     {errores}
                 </fieldset>
             </div>

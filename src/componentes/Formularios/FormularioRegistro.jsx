@@ -41,8 +41,11 @@ export function FormularioRegistro() {
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
-                            <fieldset className="fieldset">
+                            <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-[#1C1C1C]/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
 
+                                <legend className="text-3xl font-bold text-#1C1C1C] text-center mb-2">
+                                    Registro
+                                </legend>
                                 <input type="text" className="input" placeholder="Nombre de usuario"
                                     value={administrador.alias}
                                     onChange={e => {
@@ -50,7 +53,7 @@ export function FormularioRegistro() {
                                             ...administrador,
                                             alias: e.target.value
                                         });
-                                         setErrorres("");
+                                        setErrorres("");
                                     }} />
 
                                 <input type="email" className="input" placeholder="Email"
@@ -62,7 +65,7 @@ export function FormularioRegistro() {
                                             ...administrador,
                                             correo: e.target.value
                                         });
-                                         setErrorres("");
+                                        setErrorres("");
                                     }}
                                 />
 
@@ -74,7 +77,7 @@ export function FormularioRegistro() {
                                             ...administrador,
                                             passwrd: e.target.value
                                         });
-                                         setErrorres("");
+                                        setErrorres("");
                                     }}
                                 />
                                 <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>
