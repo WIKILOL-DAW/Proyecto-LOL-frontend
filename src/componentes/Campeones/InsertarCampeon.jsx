@@ -8,15 +8,17 @@ export function InsertarCampeon() {
 
     const [campeon, setCampeon] = useState({
         nombre: "",
-        posicion: ""
+        posicion: "",
+        descripcion: "",
+        imagen: ""
     });
 
     const [errores, setErrorres] = useState("");
 
     const crearCampeon = async () => {
 
-        if (!campeon.nombre || !campeon.posicion) {
-            setErrorres("El nombre ni la posicion puede estar en blanco");
+        if (!campeon.nombre || !campeon.posicion || !campeon.descripcion || !campeon.imagen) {
+            setErrorres("No pueden quedar campos vacios");
         } else {
             const data = await post("/api/campeon/insertarCampeon", campeon);
             console.log("Campeon creado:", data);
@@ -39,6 +41,26 @@ export function InsertarCampeon() {
                             setCampeon({
                                 ...campeon,
                                 nombre: e.target.value
+                            });
+                            setErrorres("");
+                        }} />
+
+                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Descripcion del campeon"
+                        value={campeon.descripcion}
+                        onChange={e => {
+                            setCampeon({
+                                ...campeon,
+                                descripcion: e.target.value
+                            });
+                            setErrorres("");
+                        }} />
+
+                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Enlace de la imagen"
+                        value={campeon.imagen}
+                        onChange={e => {
+                            setCampeon({
+                                ...campeon,
+                                imagen: e.target.value
                             });
                             setErrorres("");
                         }} />
