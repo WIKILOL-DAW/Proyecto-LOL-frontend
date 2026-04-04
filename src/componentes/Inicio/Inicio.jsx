@@ -1,7 +1,7 @@
-import yunnara from '../../assets/img_campeones/yunnara.webp'
 import competitivo from '../../assets/img/lol_competitivo.png'
 import parcheLol from '../../assets/img/parche_lol_13.10.png'
 import fondo from '../../assets/img/copa_mundial.png'
+import campeones from '../../assets/img_campeones/campeones.png'
 
 export default function Inicio() {
 
@@ -24,7 +24,7 @@ export default function Inicio() {
             <div className="p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="card bg-base-100 shadow-xl">
                     <figure>
-                        <img src={yunnara} alt="Yuanara" />
+                        <img src={campeones} alt="Yuanara" />
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">Campeones</h2>
