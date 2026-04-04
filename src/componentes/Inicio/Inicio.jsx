@@ -1,7 +1,7 @@
 import competitivo from '../../assets/img/lol_competitivo.png'
-import parcheLol from '../../assets/img/parche_lol_13.10.png'
+import parcheLol from '../../assets/img/parche_lol.png'
 import fondo from '../../assets/img/copa_mundial.png'
-import campeones from '../../assets/img_campeones/campeones.png'
+import campeones from '../../assets/img/campeones.png'
 import { useNavigate } from 'react-router'
 
 export default function Inicio() {
@@ -31,7 +31,7 @@ export default function Inicio() {
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">Campeones</h2>
-                        <p>Conoce los campeones y su habilidades</p>
+                        <p>Conoce a todos los campeones de runnaterra</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary" onClick={() => navigate("/verCampeones")}>Ver más</button>
                         </div>
@@ -44,7 +44,7 @@ export default function Inicio() {
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">Noticas</h2>
-                        <p>Consulta las ultimas noticas</p>
+                        <p>Consulta las ultimas noticias y cambios de la grieta</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">Ver mas</button>
                         </div>
