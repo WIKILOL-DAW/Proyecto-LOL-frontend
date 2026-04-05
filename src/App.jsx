@@ -4,7 +4,7 @@ import { FormularioInicioSesion } from "./componentes/Formularios/FormularioInic
 import { FormularioRegistro } from "./componentes/Formularios/FormularioRegistro";
 import Inicio from "./componentes/Inicio/Inicio";
 import './index.css'
-import Equipo from "./componentes/Equipo/Equipo";
+import Ligas from "./componentes/Liga/Ligas";
 import { InsertarEquipo } from "./componentes/Equipo/InsertarEquipo";
 import { InsertarCampeon } from "./componentes/Campeones/InsertarCampeon";
 import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
@@ -23,6 +23,7 @@ function App() {
         <Route path="/insertarCampeon" element={<InsertarCampeon />} />
         <Route path="/insertarJugador" element={<InsertarJugador />} />
         <Route path="/verCampeones" element={<Campeones />} />
+        <Route path="/verLigas" element={<Ligas />} />
       </Routes>
     </>
   );
