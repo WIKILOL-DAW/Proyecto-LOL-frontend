@@ -24,7 +24,7 @@ export default function Ligas() {
                     <h2 className="card-title text-white text-2xl">LCK</h2>
                     <p className="opacity-80">Macro perfecto, disciplina y dinastías.</p>
                     <div className="card-actions justify-end mt-3">
-                        <button onClick={() => ligaBuscada("LCK")} className="btn btn-neutral btn-sm">Ver más</button>
+                        <button onClick={() => ligaBuscada("LCK")} className="btn btn-outline">Ver más</button>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default function Ligas() {
                     <h2 className="card-title text-red-500 text-2xl">LPL</h2>
                     <p className="opacity-80">Caos, peleas constantes y ritmo frenético.</p>
                     <div className="card-actions justify-end mt-3">
-                        <button onClick={() => ligaBuscada("LPL")} className="btn btn-error btn-sm">Ver más</button>
+                        <button onClick={() => ligaBuscada("LPL")} className="btn btn-outline btn-error">Ver más</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@ export default function Ligas() {
                     <h2 className="card-title text-blue-500 text-2xl">LEC</h2>
                     <p className="opacity-80">Creatividad y drafts raros.</p>
                     <div className="card-actions justify-end mt-3">
-                        <button onClick={() => ligaBuscada("LEC")} className="btn btn-info btn-sm">Ver más</button>
+                        <button onClick={() => ligaBuscada("LEC")} className="btn btn-outline btn-accent">Ver más</button>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ export default function Ligas() {
                     <h2 className="card-title text-gray-400 text-2xl">LCS</h2>
                     <p className="opacity-80">Memes y alguna sorpresa internacional.</p>
                     <div className="card-actions justify-end mt-3">
-                        <button onClick={() => ligaBuscada("LCS")} className="btn btn-neutral btn-sm">Ver más</button>
+                        <button onClick={() => ligaBuscada("LCS")} className="btn btn-outline">Ver más</button>
                     </div>
                 </div>
             </div>

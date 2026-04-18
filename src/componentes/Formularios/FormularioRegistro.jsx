@@ -26,9 +26,8 @@ export function FormularioRegistro() {
             setErrorres(message);
 
             if (token !== null) {
-
                 sessionStorage.setItem("token", JSON.stringify(token));
-                navigate("/");
+                navigate("/login");
             }
         }
     }
@@ -81,6 +80,7 @@ export function FormularioRegistro() {
                                     }}
                                 />
                                 <button className="btn btn-neutral mt-4" onClick={doRegistro}>Registrarse</button>
+
                                 <span>{errores}</span>
                             </fieldset>
                         </div>
