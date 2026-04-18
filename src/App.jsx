@@ -9,6 +9,7 @@ import { InsertarEquipo } from "./componentes/Equipo/InsertarEquipo";
 import { InsertarCampeon } from "./componentes/Campeones/InsertarCampeon";
 import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
 import { Campeones } from "./componentes/Campeones/Campeones";
+import Equipo from "./componentes/Equipo/Equipo";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/insertarJugador" element={<InsertarJugador />} />
         <Route path="/verCampeones" element={<Campeones />} />
         <Route path="/verLigas" element={<Ligas />} />
+        <Route path="/equipos/:liga" element={<Equipo />} />
       </Routes>
     </>
   );

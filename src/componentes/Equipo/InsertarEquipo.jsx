@@ -8,7 +8,9 @@ export function InsertarEquipo() {
 
     const [equipo, setEquipo] = useState({
         nombre: "",
-        nombreLiga: ""
+        nombreLiga: "",
+        imagen: "",
+        descripcion : ""
     });
 
     const [errores, setErrorres] = useState("");
@@ -38,6 +40,26 @@ export function InsertarEquipo() {
                         setEquipo({
                             ...equipo,
                             nombre: e.target.value
+                        });
+                        setErrorres("");
+                    }} />
+
+                      <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Direccion de la imagen"
+                    value={equipo.imagen}
+                    onChange={e => {
+                        setEquipo({
+                            ...equipo,
+                            imagen: e.target.value
+                        });
+                        setErrorres("");
+                    }} />
+
+                      <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Descripcion del equipo"
+                    value={equipo.descripcion}
+                    onChange={e => {
+                        setEquipo({
+                            ...equipo,
+                            descripcion: e.target.value
                         });
                         setErrorres("");
                     }} />
