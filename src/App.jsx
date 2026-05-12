@@ -11,6 +11,8 @@ import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
 import { Campeones } from "./componentes/Campeones/Campeones";
 import Equipo from "./componentes/Equipo/Equipo";
 import { Administrador } from "./componentes/Administrador/Administrador";
+import Noticas from "./componentes/Noticias/Noticias";
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route path="/verLigas" element={<Ligas />} />
         <Route path="/equipos/:liga" element={<Equipo />} />
         <Route path="/administradores" element={<Administrador />} />
+        <Route path="/noticias" element={<Noticas />} />
       </Routes>
     </>
   );

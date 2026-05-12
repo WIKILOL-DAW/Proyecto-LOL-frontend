@@ -46,7 +46,7 @@ export default function Inicio() {
                         <h2 className="card-title">Noticas</h2>
                         <p>Consulta las ultimas noticias y cambios de la grieta</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Ver mas</button>
+                            <button className="btn btn-primary" onClick={() => navigate("/noticias")}>Ver mas</button>
                         </div>
                     </div>
                 </div>
