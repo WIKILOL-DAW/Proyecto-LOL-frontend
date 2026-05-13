@@ -7,6 +7,7 @@ export function NavBar() {
         <>
             <li><Link to="/verLigas">Ligas</Link></li>
             <li><Link to="/verCampeones">Campeones</Link></li>
+            <li><Link to="/verJugadores">Jugadores</Link></li>
         </>
     );
 

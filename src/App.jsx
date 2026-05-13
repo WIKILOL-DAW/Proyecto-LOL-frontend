@@ -12,6 +12,8 @@ import { Campeones } from "./componentes/Campeones/Campeones";
 import Equipo from "./componentes/Equipo/Equipo";
 import { Administrador } from "./componentes/Administrador/Administrador";
 import { BorrarEquipos } from "./componentes/Equipo/EliminarEquipo"
+import { Jugadores } from "./componentes/Jugador/Jugadores";
+import { BorrarJugadores } from "./componentes/Jugador/EliminarJugador";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <Route path="/verLigas" element={<Ligas />} />
         <Route path="/equipos/:liga" element={<Equipo />} />
         <Route path="/administradores" element={<Administrador />} />
-        <Route path="/borrarEquipo" element={<BorrarEquipos/>}/>
+        <Route path="/borrarEquipo" element={<BorrarEquipos />} />
+        <Route path="/verJugadores" element={<Jugadores />} />
+        <Route path="/borrarJugador" element={<BorrarJugadores/>}/>
       </Routes>
     </>
   );
