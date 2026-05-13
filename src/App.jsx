@@ -11,6 +11,7 @@ import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
 import { Campeones } from "./componentes/Campeones/Campeones";
 import Equipo from "./componentes/Equipo/Equipo";
 import { Administrador } from "./componentes/Administrador/Administrador";
+import { BorrarEquipos } from "./componentes/Equipo/EliminarEquipo"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/verLigas" element={<Ligas />} />
         <Route path="/equipos/:liga" element={<Equipo />} />
         <Route path="/administradores" element={<Administrador />} />
+        <Route path="/borrarEquipo" element={<BorrarEquipos/>}/>
       </Routes>
     </>
   );
