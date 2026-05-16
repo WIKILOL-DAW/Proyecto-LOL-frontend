@@ -67,21 +67,44 @@ export default function Inicio() {
 
             <div className="w-full flex flex-col items-center mt-10 mb-10">
                 <h2 className="text-2xl font-bold mb-4">Si quieres apoyarnos directamente 🫡</h2>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap justify-center gap-6">
                     <a
                         href="https://ko-fi.com"
                         target="_blank"
-                        className="btn bg-[#29ABE0] text-white border-none"
+                        className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#29ABE0] text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200"
                     >
+                        <img
+                            src="https://storage.ko-fi.com/cdn/cup-border.png"
+                            alt="Ko-fi"
+                            className="w-6 h-6"
+                        />
                         Ko‑fi
                     </a>
 
                     <a
                         href="https://paypal.me"
                         target="_blank"
-                        className="btn bg-[#003087] text-white border-none"
+                        className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#003087] text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200"
                     >
+                        <img
+                            src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+                            alt="PayPal"
+                            className="w-6 h-6"
+                        />
                         PayPal
+                    </a>
+
+                    <a
+                        href="https://patreon.com"
+                        target="_blank"
+                        className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#FF424D] text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200"
+                    >
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg"
+                            alt="Patreon"
+                            className="w-6 h-6"
+                        />
+                        Patreon
                     </a>
                 </div>
             </div>
