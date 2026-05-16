@@ -43,10 +43,10 @@ export default function Inicio() {
                         <img src={parcheLol} alt="Noticas" />
                     </figure>
                     <div className="card-body">
-                        <h2 className="card-title">Noticas</h2>
-                        <p>Consulta las ultimas noticias y cambios de la grieta</p>
+                        <h2 className="card-title">Noticias</h2>
+                        <p>Consulta las últimas noticias y cambios de la grieta</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Ver mas</button>
+                            <button className="btn btn-primary">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,27 @@ export default function Inicio() {
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div className="w-full flex flex-col items-center mt-10 mb-10">
+                <h2 className="text-2xl font-bold mb-4">Si quieres apoyarnos directamente 🫡</h2>
+                <div className="flex gap-4">
+                    <a
+                        href="https://ko-fi.com"
+                        target="_blank"
+                        className="btn bg-[#29ABE0] text-white border-none"
+                    >
+                        Ko‑fi
+                    </a>
+
+                    <a
+                        href="https://paypal.me"
+                        target="_blank"
+                        className="btn bg-[#003087] text-white border-none"
+                    >
+                        PayPal
+                    </a>
+                </div>
             </div>
         </div>
     );
