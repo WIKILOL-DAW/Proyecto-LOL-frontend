@@ -10,7 +10,7 @@ export function InsertarEquipo() {
         nombre: "",
         nombreLiga: "",
         imagen: "",
-        descripcion : ""
+        descripcion: ""
     });
 
     const [errores, setErrorres] = useState("");
@@ -18,59 +18,69 @@ export function InsertarEquipo() {
     const crearEquipo = async () => {
 
         if (!equipo.nombre || !equipo.nombreLiga) {
-            setErrorres("Nombre de equipo o liga vacios");
+            setErrorres("Nombre de equipo o liga vacíos");
         } else {
             const data = await post("/api/equipo/insertarEquipo", equipo);
             console.log("Equipo creado:", data);
-            setErrorres("Equipo creado con exito");
+            setErrorres("Equipo creado con éxito");
         }
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-base-300 to-base-200 p-6">
-            <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-[#1C1C1C]/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
+        <div className="flex items-center justify-center min-h-screen 
+            bg-[#0A1428] p-6">
 
-                <legend className="text-3xl font-bold text-#1C1C1C] text-center mb-2">
+            <fieldset className="fieldset bg-[#162032]/80 backdrop-blur-xl 
+                border border-[#2F4A72]/50 rounded-2xl w-full max-w-xl 
+                shadow-[0_0_25px_rgba(47,74,114,0.25)] p-8 space-y-5">
+
+                <legend className="text-4xl font-extrabold text-[#3C6EAF] 
+                    text-center mb-4 drop-shadow-lg tracking-wide">
                     Añadir equipo
                 </legend>
 
-                <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Nombre del equipo"
+                <input
+                    type="text"
+                    className="input input-bordered w-full bg-[#0A1428] text-gray-200 
+                    border-[#2F4A72] focus:border-[#3C6EAF] focus:ring-[#3C6EAF]"
+                    placeholder="Nombre del equipo"
                     value={equipo.nombre}
                     onChange={e => {
-                        setEquipo({
-                            ...equipo,
-                            nombre: e.target.value
-                        });
+                        setEquipo({ ...equipo, nombre: e.target.value });
                         setErrorres("");
-                    }} />
+                    }}
+                />
 
-                      <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Direccion de la imagen"
+                <input
+                    type="text"
+                    className="input input-bordered w-full bg-[#0A1428] text-gray-200 
+                    border-[#2F4A72] focus:border-[#3C6EAF] focus:ring-[#3C6EAF]"
+                    placeholder="Dirección de la imagen"
                     value={equipo.imagen}
                     onChange={e => {
-                        setEquipo({
-                            ...equipo,
-                            imagen: e.target.value
-                        });
+                        setEquipo({ ...equipo, imagen: e.target.value });
                         setErrorres("");
-                    }} />
+                    }}
+                />
 
-                      <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Descripcion del equipo"
+                <input
+                    type="text"
+                    className="input input-bordered w-full bg-[#0A1428] text-gray-200 
+                    border-[#2F4A72] focus:border-[#3C6EAF] focus:ring-[#3C6EAF]"
+                    placeholder="Descripción del equipo"
                     value={equipo.descripcion}
                     onChange={e => {
-                        setEquipo({
-                            ...equipo,
-                            descripcion: e.target.value
-                        });
+                        setEquipo({ ...equipo, descripcion: e.target.value });
                         setErrorres("");
-                    }} />
+                    }}
+                />
+
                 <select
-                    className="input input-bordered border-[#111111] focus:border-[#111111] w-full"
+                    className="select select-bordered w-full bg-[#0A1428] text-gray-200 
+                    border-[#2F4A72] focus:border-[#3C6EAF] focus:ring-[#3C6EAF]"
                     value={equipo.nombreLiga}
                     onChange={e => {
-                        setEquipo({
-                            ...equipo,
-                            nombreLiga: e.target.value
-                        });
+                        setEquipo({ ...equipo, nombreLiga: e.target.value });
                         setErrorres("");
                     }}
                 >
@@ -80,9 +90,25 @@ export function InsertarEquipo() {
                     <option value="LCK">LCK</option>
                     <option value="LPL">LPL</option>
                 </select>
-                <button className="btn btn-neutral mt-4" onClick={crearEquipo}>Añadir equipo</button>
-                {errores}
+
+                <button
+                    className="btn w-full mt-4 font-bold tracking-wide 
+                    bg-[#3C6EAF] border-[#3C6EAF] text-white 
+                    hover:bg-[#5A8CCF] hover:border-[#5A8CCF] 
+                    shadow-lg hover:shadow-[0_0_20px_rgba(60,110,175,0.4)] 
+                    transition-all duration-200"
+                    onClick={crearEquipo}
+                >
+                    Añadir equipo
+                </button>
+
+                {errores && (
+                    <p className="text-center text-red-400 font-semibold mt-2">
+                        {errores}
+                    </p>
+                )}
+
             </fieldset>
         </div>
-    )
+    );
 }
