@@ -12,6 +12,8 @@ import { Campeones } from "./componentes/Campeones/Campeones";
 import Equipo from "./componentes/Equipo/Equipo";
 import { Administrador } from "./componentes/Administrador/Administrador";
 import Noticas from "./componentes/Noticias/Noticias";
+import Esports from "./componentes/Esports/Esports";
+import Campeonato from "./componentes/Esports/Campeonato";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/equipos/:liga" element={<Equipo />} />
         <Route path="/administradores" element={<Administrador />} />
         <Route path="/noticias" element={<Noticas />} />
+        <Route path="/esports" element={<Esports />} />
+        <Route path="/esports/:campeonato" element={<Campeonato />} />
       </Routes>
     </>
   );
