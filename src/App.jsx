@@ -18,6 +18,10 @@ import { BorrarCampeones } from "./componentes/Campeones/EliminarCampeon";
 import { ActualizarEquipo } from "./componentes/Equipo/ModifcarEquipo";
 import { ModificarJugador } from "./componentes/Jugador/ModificarJugador";
 import { ModificarCampeon } from "./componentes/Campeones/ModificarCampeon";
+import Noticas from "./componentes/Noticias/Noticias";
+import Esports from "./componentes/Esports/Esports";
+import Campeonato from "./componentes/Esports/Campeonato";
+
 
 function App() {
   return (
@@ -42,6 +46,9 @@ function App() {
         <Route path="/modificarEquipo" element={<ActualizarEquipo />} />
         <Route path="/modificarJugador" element={<ModificarJugador />} />
         <Route path="/modificarCampeon" element={<ModificarCampeon/>}/>
+        <Route path="/noticias" element={<Noticas />} />
+        <Route path="/esports" element={<Esports />} />
+        <Route path="/esports/:campeonato" element={<Campeonato />} />
       </Routes>
     </>
   );

@@ -32,7 +32,7 @@ export default function Noticias() {
                     <div key={noticia.id} className="card bg-base-200 shadow-xl border border-yellow-700 hover:border-yellow-400 transition-all duration-300 group">
                         <figure className="relative overflow-hidden">
                             <img
-                                src={noticia.imagen || "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg"}
+                                src={noticia.imagen || "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg" /*TEMPORAL*/}
                                 alt={noticia.titular}
                                 className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-90"
                             />

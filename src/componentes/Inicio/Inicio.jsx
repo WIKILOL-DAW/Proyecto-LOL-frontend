@@ -59,7 +59,7 @@ export default function Inicio() {
                         <h2 className="card-title">Esports</h2>
                         <p>Sigue los mejores torneos del mundo</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Ver torneos</button>
+                            <button className="btn btn-primary" onClick={() => navigate("/Esports")}>Ver torneos</button>
                         </div>
                     </div>
                 </div>
