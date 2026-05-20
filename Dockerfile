@@ -1,11 +1,12 @@
-FROM node:20
+FROM node:20 AS build
 
 WORKDIR /app
 
 COPY FRONT/ .
 
 RUN npm install
+RUN npm run build
 
-EXPOSE 5173
+FROM httpd:2.4
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+COPY --from=build /app/dist/ /usr/local/apache2/htdocs/
