@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "lolfront",
-      "image": "291256530255.dkr.ecr.us-east-1.amazonaws.com/lolfront:latest",
+      "image": "IMAGE_PLACEHOLDER",
       "essential": true,
       "portMappings": [
         {
