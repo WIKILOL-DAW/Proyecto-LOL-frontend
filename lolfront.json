@@ -1,10 +1,11 @@
 {
   "family": "lolfront",
+  "taskRoleArn": "arn:aws:iam::540843989018:role/LabRole",
+  "executionRoleArn": "arn:aws:iam::540843989018:role/LabRole",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::291256530255:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "lolfront",
