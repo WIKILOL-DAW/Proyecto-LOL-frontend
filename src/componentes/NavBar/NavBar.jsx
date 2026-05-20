@@ -6,8 +6,8 @@ export function NavBar() {
     const links = (
         <>
             <li><Link to="/verLigas">Ligas</Link></li>
-            <li><Link to="">Regiones</Link></li>
             <li><Link to="/verCampeones">Campeones</Link></li>
+            <li><Link to="/verJugadores">Jugadores</Link></li>
         </>
     );
 

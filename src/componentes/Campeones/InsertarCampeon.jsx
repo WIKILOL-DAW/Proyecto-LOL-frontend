@@ -28,64 +28,87 @@ export function InsertarCampeon() {
 
     return (
         <>
-            <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-base-300 to-base-200 p-6">
-                <fieldset className="fieldset bg-base-100/70 backdrop-blur-md border border-[#1C1C1C]/40 rounded-xl w-full max-w-md shadow-2xl p-6 space-y-4">
+            <div className="flex items-center justify-center min-h-screen 
+                bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6">
 
-                    <legend className="text-3xl font-bold text-#1C1C1C] text-center mb-2">
-                        Añadir campeon
+                <fieldset className="fieldset bg-gray-900/70 backdrop-blur-xl 
+                    border border-yellow-600/40 rounded-2xl w-full max-w-xl 
+                    shadow-[0_0_25px_rgba(255,200,0,0.25)] p-8 space-y-5">
+
+                    <legend className="text-4xl font-extrabold text-yellow-400 
+                        text-center mb-4 drop-shadow-lg tracking-wide">
+                        Añadir campeón
                     </legend>
 
-                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Nombre del campeon"
+                    <input
+                        type="text"
+                        className="input input-bordered w-full bg-gray-800 text-gray-200 
+                        border-yellow-700 focus:border-yellow-500 focus:ring-yellow-500"
+                        placeholder="Nombre del campeón"
                         value={campeon.nombre}
                         onChange={e => {
-                            setCampeon({
-                                ...campeon,
-                                nombre: e.target.value
-                            });
+                            setCampeon({ ...campeon, nombre: e.target.value });
                             setErrorres("");
-                        }} />
+                        }}
+                    />
 
-                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Descripcion del campeon"
+                    <input
+                        type="text"
+                        className="input input-bordered w-full bg-gray-800 text-gray-200 
+                        border-yellow-700 focus:border-yellow-500 focus:ring-yellow-500"
+                        placeholder="Descripción del campeón"
                         value={campeon.descripcion}
                         onChange={e => {
-                            setCampeon({
-                                ...campeon,
-                                descripcion: e.target.value
-                            });
+                            setCampeon({ ...campeon, descripcion: e.target.value });
                             setErrorres("");
-                        }} />
+                        }}
+                    />
 
-                    <input type="text" className="input input-bordered border-[#111111] focus:border-[#111111] w-full" placeholder="Enlace de la imagen"
+                    <input
+                        type="text"
+                        className="input input-bordered w-full bg-gray-800 text-gray-200 
+                        border-yellow-700 focus:border-yellow-500 focus:ring-yellow-500"
+                        placeholder="Enlace de la imagen"
                         value={campeon.imagen}
                         onChange={e => {
-                            setCampeon({
-                                ...campeon,
-                                imagen: e.target.value
-                            });
+                            setCampeon({ ...campeon, imagen: e.target.value });
                             setErrorres("");
-                        }} />
+                        }}
+                    />
+
                     <select
-                        className="input input-bordered border-[#111111] focus:border-[#111111] w-full"
+                        className="select select-bordered w-full bg-gray-800 text-gray-200 
+                        border-yellow-700 focus:border-yellow-500 focus:ring-yellow-500"
                         value={campeon.posicion}
                         onChange={e => {
-                            setCampeon({
-                                ...campeon,
-                                posicion: e.target.value
-                            });
+                            setCampeon({ ...campeon, posicion: e.target.value });
                             setErrorres("");
                         }}
                     >
-                        <option value="" disabled>Seleccionar posicion</option>
+                        <option value="" disabled>Seleccionar posición</option>
                         <option value="TOP">TOP</option>
                         <option value="JGL">JGL</option>
                         <option value="MID">MID</option>
                         <option value="ADC">ADC</option>
                         <option value="SUP">SUPP</option>
                     </select>
-                    <button className="btn btn-neutral mt-4" onClick={crearCampeon}>Añadir equipo</button>
-                    {errores}
+
+                    <button
+                        className="btn btn-warning w-full mt-4 font-bold tracking-wide 
+                        shadow-lg hover:shadow-yellow-500/40 transition-all duration-200"
+                        onClick={crearCampeon}
+                    >
+                        Añadir campeón
+                    </button>
+
+                    {errores && (
+                        <p className="text-center text-red-400 font-semibold mt-2">
+                            {errores}
+                        </p>
+                    )}
+
                 </fieldset>
             </div>
         </>
-    )
+    );
 }

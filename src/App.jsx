@@ -11,8 +11,13 @@ import { InsertarJugador } from "./componentes/Jugador/InsertarJugador";
 import { Campeones } from "./componentes/Campeones/Campeones";
 import Equipo from "./componentes/Equipo/Equipo";
 import { Administrador } from "./componentes/Administrador/Administrador";
-import Noticas from "./componentes/Noticias/Noticias";
-
+import { BorrarEquipos } from "./componentes/Equipo/EliminarEquipo"
+import { Jugadores } from "./componentes/Jugador/Jugadores";
+import { BorrarJugadores } from "./componentes/Jugador/EliminarJugador";
+import { BorrarCampeones } from "./componentes/Campeones/EliminarCampeon";
+import { ActualizarEquipo } from "./componentes/Equipo/ModifcarEquipo";
+import { ModificarJugador } from "./componentes/Jugador/ModificarJugador";
+import { ModificarCampeon } from "./componentes/Campeones/ModificarCampeon";
 
 function App() {
   return (
@@ -30,7 +35,13 @@ function App() {
         <Route path="/verLigas" element={<Ligas />} />
         <Route path="/equipos/:liga" element={<Equipo />} />
         <Route path="/administradores" element={<Administrador />} />
-        <Route path="/noticias" element={<Noticas />} />
+        <Route path="/borrarEquipo" element={<BorrarEquipos />} />
+        <Route path="/verJugadores" element={<Jugadores />} />
+        <Route path="/borrarJugador" element={<BorrarJugadores />} />
+        <Route path="/borrarCampeon" element={<BorrarCampeones />} />
+        <Route path="/modificarEquipo" element={<ActualizarEquipo />} />
+        <Route path="/modificarJugador" element={<ModificarJugador />} />
+        <Route path="/modificarCampeon" element={<ModificarCampeon/>}/>
       </Routes>
     </>
   );

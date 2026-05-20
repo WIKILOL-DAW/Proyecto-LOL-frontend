@@ -14,6 +14,12 @@ export function NavBarAdministradores() {
                 <li><Link to="/insertarEquipo">Nuevo equipo</Link></li>
                 <li><Link to="/insertarCampeon">Nuevo campeon</Link></li>
                 <li><Link to="/insertarJugador">Nuevo jugador</Link></li>
+                <li><Link to="/modificarCampeon">Modificar Campeon</Link></li>
+                <li><Link to="/modificarEquipo"> Modificar Equipo</Link></li>
+                <li><Link to="/modificarJugador">Moficiar Jugador</Link></li>
+                <li><Link to="/borrarEquipo">Borrar equipos</Link></li>
+                <li><Link to="/borrarJugador">Borrar jugadores</Link></li>
+                <li><Link to="/borrarCampeon">Borrar campeones</Link></li>
             </>
         )
     } else {

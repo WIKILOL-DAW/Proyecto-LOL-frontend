@@ -63,7 +63,7 @@ export function patch(ruta, datos, callback, callbackError) {
 
     const enviarDatos = {
         method: "PATCH",
-        header: cabecera,
+        headers: cabecera,
         body: JSON.stringify(datos)
     }
 

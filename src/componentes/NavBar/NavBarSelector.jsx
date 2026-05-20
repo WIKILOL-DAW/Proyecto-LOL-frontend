@@ -8,8 +8,8 @@ export function NavbarSelector() {
 
   const rutasAdministradores = ["/login", "/registro",
     "/insertarEquipo", "/modificarEquipo", "/borrarEquipo",
-    "/insertarCampeon", "/modificarCampeon", "/borrarCampeon",
-    "/insertarJugador", "/modificarJugador", "/borrarJugador"]
+    "/insertarCampeon", "/insertarJugador", "/borrarCampeon",
+    "/borrarJugador", "/modificarJugador", "/modificarCampeon"]
   const rutaAdministrador = rutasAdministradores.includes(location.pathname)
 
   return (
