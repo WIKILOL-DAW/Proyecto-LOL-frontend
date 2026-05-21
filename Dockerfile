@@ -1,4 +1,3 @@
-# ===== BUILD =====
 FROM node:20 AS build
 
 WORKDIR /app
@@ -7,30 +6,19 @@ COPY FRONT/package*.json ./
 
 RUN npm install
 
-COPY FRONT/ .
+COPY FRONT/. .
 
 RUN npm run build
 
+RUN echo "====== DIST ======"
+RUN ls -R /app/dist
 
-# ===== SERVE =====
+RUN echo "====== INDEX ======"
+RUN cat /app/dist/index.html
+
+
 FROM httpd:2.4
 
-# Habilitar mod_rewrite
-RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
+COPY --from=build /app/dist /usr/local/apache2/htdocs
 
-# Permitir .htaccess
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /usr/local/apache2/conf/httpd.conf
-
-# Copiar build
-COPY --from=build /app/dist/ /usr/local/apache2/htdocs/
-
-# Configuración SPA React Router
-RUN echo '\
-<IfModule mod_rewrite.c>\n\
-  RewriteEngine On\n\
-  RewriteBase /\n\
-  RewriteRule ^index\.html$ - [L]\n\
-  RewriteCond %{REQUEST_FILENAME} !-f\n\
-  RewriteCond %{REQUEST_FILENAME} !-d\n\
-  RewriteRule . /index.html [L]\n\
-</IfModule>' > /usr/local/apache2/htdocs/.htaccess
+EXPOSE 80
