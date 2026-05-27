@@ -1,5 +1,7 @@
 //const URL_BACKEND = '192.168.11.239';
-const URL_BACKEND = 'http://localhost:8080'
+//const URL_BACKEND = 'http://localhost:8080'
+const URL_BACKEND = 'http://lol-alb-2138982396.us-east-1.elb.amazonaws.com'
+
 
 export function get(ruta, callback, callbackError) {
 

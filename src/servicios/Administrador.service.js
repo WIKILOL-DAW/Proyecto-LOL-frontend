@@ -1,6 +1,6 @@
-const API = "http://localhost:8080"
+//const API = "http://localhost:8080";
 //const API = 'http://192.168.11.239:8080';
-
+const API = "http://lol-alb-2138982396.us-east-1.elb.amazonaws.com";
 const registro = async (administrador) => {
     try {
         const respuesta = await fetch(API + "/api/admin/registro", {
