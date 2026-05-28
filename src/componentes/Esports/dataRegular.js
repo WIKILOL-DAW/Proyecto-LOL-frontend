@@ -6,7 +6,7 @@ export async function obtenerPartidasTorneo(campeonato) {
 
         const response = await fetch(
            // "http://localhost:8080/api/partida/obtenerPartidas"
-            "http://lol-alb-2138982396.us-east-1.elb.amazonaws.com"
+            "http://100.24.142.55:8080"
         );
 
         const data = await response.json();
