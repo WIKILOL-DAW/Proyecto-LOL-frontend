@@ -1,5 +1,5 @@
 //const API = "http://localhost:8080";
-const API = "https://miixvvidti.execute-api.us-east-1.amazonaws.com";
+const API = "https://ulldm3r0hc.execute-api.us-east-1.amazonaws.com";
 //const API = "http://lol-alb-2138982396.us-east-1.elb.amazonaws.com";
 const registro = async (administrador) => {
     try {
