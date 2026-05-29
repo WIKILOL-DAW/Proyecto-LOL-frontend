@@ -6,7 +6,7 @@ export async function obtenerPartidasTorneo(campeonato) {
 
         const response = await fetch(
            // "http://localhost:8080/api/partida/obtenerPartidas"
-            "https://miixvvidti.execute-api.us-east-1.amazonaws.com"
+            "https://ulldm3r0hc.execute-api.us-east-1.amazonaws.com"
         );
 
         const data = await response.json();
