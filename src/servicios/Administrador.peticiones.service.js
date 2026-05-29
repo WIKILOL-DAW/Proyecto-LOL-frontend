@@ -1,4 +1,4 @@
-const URL_BACKEND = 'http://100.24.142.55:8080';
+const URL_BACKEND = 'https://miixvvidti.execute-api.us-east-1.amazonaws.com';
 //const URL_BACKEND = 'http://localhost:8080'
 //const URL_BACKEND = 'http://lol-alb-2138982396.us-east-1.elb.amazonaws.com'
 
