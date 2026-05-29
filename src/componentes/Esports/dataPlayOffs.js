@@ -3,7 +3,7 @@ import logos from "../../data/logos";
 export async function generarPlayoffs(competicion) {
 
     const response = await fetch(
-        "https://miixvvidti.execute-api.us-east-1.amazonaws.com"
+        "https://ulldm3r0hc.execute-api.us-east-1.amazonaws.com"
     );
 
     const data = await response.json();
